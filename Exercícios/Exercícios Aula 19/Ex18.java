@@ -4,6 +4,8 @@ public class Ex18 {
         int[] vetorA = new int[10];
         int menor = Integer.MAX_VALUE;
         int maior = Integer.MIN_VALUE;
+        int indiceMaior = 0;
+        int indiceMenor = 0;
 
        
         vetorA[0] = 1;
@@ -21,6 +23,7 @@ public class Ex18 {
         for (int i = 0; i<vetorA.length;i++){
             if (vetorA[i] > maior){
                 maior = vetorA[i];
+                indiceMaior = i;
             } 
             if (vetorA[i] < menor){
                 menor = vetorA[i];
@@ -29,9 +32,8 @@ public class Ex18 {
             
         }
         
-        System.out.println("A pessoa com maior idade:" + maior);
-        System.out.println("A pessoa com maior idade:" + menor);
-    
+        System.out.println("A pessoa com maior idade:" + maior + "tem índice" + indiceMaior);
+        System.out.println("A pessoa com maior idade:" + menor + "tem índice" + indiceMenor);
   
     }
 }
