@@ -1,21 +1,21 @@
 public class JogoDaVelha {
 
-    private char[][] jogoVelha = new char[3][3];
-    private int jogada = 1;
+    private char[][] jogoVelha;
+    private int jogada;
 
-    public JogoDaVelha(char[][] jogoVelha, int jogada){
-        this.jogoVelha = jogoVelha;
-        this.jogada = jogada;
+    public JogoDaVelha(){
+        jogoVelha = new char[3][3];
+        jogada = 1;
     }
 
     public char[][] getJogoVelha(){
-        return this.jogoVelha;
+        return jogoVelha;
     }
     public void setJogoVelha(char[][] jogoVelha){
         this.jogoVelha = jogoVelha;
     }
     public int getJogada(){
-        return this.jogada;
+        return jogada;
     }
     public void setJogada(int jogada){
         this.jogada = jogada;

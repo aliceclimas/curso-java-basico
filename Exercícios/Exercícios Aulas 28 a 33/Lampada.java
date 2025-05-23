@@ -1,4 +1,4 @@
-class Lampada {
+public class Lampada {
 
     private String modelo;
     private String tensao;
@@ -8,8 +8,13 @@ class Lampada {
     private int garantiaMeses;
     private String[] tipos;
     private boolean tipoAbajur;
+    private boolean ligada;
+    
+    public Lampada (){
 
-    public Lampada(String modelo, String tensao, int potencia, String cor, String tipoLuz, int garantiaMeses, String[] tipos, boolean tipoAbajur){
+    }
+
+    public Lampada(String modelo, String tensao, int potencia, String cor, String tipoLuz, int garantiaMeses, String[] tipos, boolean tipoAbajur, boolean ligada){
         this.modelo = modelo;
         this.tensao =tensao;
         this.potencia = potencia;
@@ -18,6 +23,7 @@ class Lampada {
         this.garantiaMeses = garantiaMeses;
         this.tipos = tipos;
         this.tipoAbajur = tipoAbajur;
+        this.ligada = ligada;
     }
 
     // Métodosgetters e setters
@@ -73,10 +79,6 @@ class Lampada {
     public void setTipoAbajur(boolean tipoAbajur){
         this.tipoAbajur = tipoAbajur;
     }
-
-
-
-    private boolean ligada;
 
     public void ligarLampada(){
         ligada = true;

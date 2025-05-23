@@ -7,35 +7,35 @@ public class Ex03 {
         Aluno aluno = new Aluno();
         
         System.out.println("Entre com o nome do aluno");
-        aluno.setNome(null) = scan.next();
+        aluno.setNome(scan.next());
         
         System.out.println("Entre com o nome do curso");
-        aluno.setNomeCurso = scan.next();
+        aluno.setNomeCurso(scan.next());
         
         System.out.println("Entre com a matricula");
-        aluno.setMatricula(null); = scan.next();
+        aluno.setMatricula(scan.next());
         
        
-        for (int i=0; i<aluno.nomeDisciplinas.length; i++){
+        for (int i=0; i<aluno.getNomeDisciplinas().length; i++){
             System.out.println("Entre com o nome da disciplina " + i);
-            aluno.nomeDisciplinas[i] = scan.next();
+            aluno.setNomeDisciplinas(args);
         }
         
-        for (int i=0; i<aluno.notasDisciplinas.length; i++){
-            System.out.println("Obtendo notas da disciplina " + aluno.nomeDisciplinas[i]);
-            for (int j=0; j<aluno.notasDisciplinas[i].length; j++){
+         for (int i=0; i<aluno.getNotaDisciplinas().length; i++){
+            System.out.println("Obtendo notas da disciplina " + aluno.getNomeDisciplinas()[i]);
+            for (int j=0; j<aluno.getNotaDisciplinas()[i].length; j++){
                 System.out.println("Entre com a nota " + (j+1));
-                aluno.notasDisciplinas[i][j] = scan.nextDouble();
+                aluno.setNotaDisciplinaPosIJ(i, j, scan.nextDouble());
             }
         }
         
         aluno.mostrarInfo();
         
-        for (int i=0; i<aluno.nomeDisciplinas.length; i++){
+        for (int i=0; i<aluno.getNomeDisciplinas().length; i++){
             if (aluno.verificarAprovado(i)){
-                System.out.println("Disciplina " + aluno.nomeDisciplinas[i] + " - foi aprovado");
+                System.out.println("Disciplina " + aluno.getNomeDisciplinas()[i] + " - foi aprovado");
             } else {
-                System.out.println("Disciplina " + aluno.nomeDisciplinas[i] + " - foi reprovado");
+                System.out.println("Disciplina " + aluno.getNomeDisciplinas()[i]  + " - foi reprovado");
             }
         }
         scan.close();

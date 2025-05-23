@@ -3,15 +3,19 @@ public class Aluno {
     private String nome;
     private String matricula;
     private String nomeCurso;
-    private String[] nomeDisciplinas = new String[3];
-    private double[][] notasDisciplinas = new double[3][4];
+    private String[] nomeDisciplinas;
+    private double[][] notasDisciplinas;
 
-    public Aluno(String nome, String matricula, String nomeCurso, String[] nomeDisciplinas,double[][] notasDisciplinas){
+    public Aluno(){
+        nomeDisciplinas = new String[3];
+        notasDisciplinas = new double[3][4];
+    }
+    public Aluno(String nome, String matricula, String nomeCurso){
         this.nome = nome;
-        this.matricula = matricula;
+        this.matricula= matricula;
         this.nomeCurso = nomeCurso;
-        this.nomeDisciplinas = nomeDisciplinas;
-        this.notasDisciplinas = notasDisciplinas;
+        this.nomeDisciplinas = new String[3];
+        this.notasDisciplinas = new double[3][4];
     }
     // Métodos getters e setters
     public String getNome(){
@@ -46,7 +50,7 @@ public class Aluno {
     }
 
 
-    public void mostrarursoInfo(){
+    public void mostrarInfo(){
         System.out.println("Nome: "+nome);
         System.out.println("Matricula: "+matricula);
         System.out.println("Nome do curso: "+nomeCurso);
@@ -74,6 +78,13 @@ public class Aluno {
         }
         double media = soma / 4;
         return media;
+    }
+
+    public void setNomeDisciplinaPos(int pos, String nomeDisciplina){
+        this.nomeDisciplinas[pos] = nomeDisciplina;
+    }
+    public void setNotaDisciplinaPosIJ(int posI, int posJ, double nota){
+        this.notasDisciplinas[posI][posJ] = nota;
     }
     
 }
