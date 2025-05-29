@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 public class Ex31 {
     public static void main(String[] args) {
 
         int[] vetorA = new int[20];
-        int[] vetorB = new int[20];
-     
+        ArrayList<Integer> vetorB = new ArrayList<>();
+    
         vetorA[0] = 10;
         vetorA[1] = 20;
         vetorA[2] = 3;
@@ -25,26 +27,24 @@ public class Ex31 {
         vetorA[18] = 9;
         vetorA[19] = 10;
 
-        for (int i = 0; i<10;i++){
+    
+        for (int i = 0; i < vetorA.length; i++) {
             if (vetorA[i] % 2 == 0){
-                vetorB[i] = vetorA[i];
+                vetorB.add(vetorA[i]);
             }
-           
-        } 
+        }
 
-        for (int i = 11; i < 20; i++) {
+        for (int i = 0; i < vetorA.length; i++) {
             if (vetorA[i] % 2 != 0){
-                vetorB[i] = vetorA[i];
+                vetorB.add(vetorA[i]);
             }
-           
-            
         }
 
-        for (int i = 0; i<=vetorB.length;i++){
-            System.out.println(vetorB[i]);
+
+        for (int num: vetorB){
+            System.out.println("Vetor B");
+            System.out.println(num);
         }
-        for (int i = 0; i<=vetorB.length;i++){
-            System.out.println(vetorB[i]);
-        }
+      
     }
 }

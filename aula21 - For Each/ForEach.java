@@ -35,11 +35,6 @@ class ForEach{
         notasAlunos[2][1] = 7;
         notasAlunos[2][2] = 9;
         notasAlunos[2][3] = 9.5;
-
-        notasAlunos[3][0] = 10;
-        notasAlunos[3][1] = 7;
-        notasAlunos[3][2] = 9;
-        notasAlunos[3][3] = 9.5;
         
         for (double[] notasAluno : notasAlunos){
             for (double nota : notasAluno){

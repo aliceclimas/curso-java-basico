@@ -1,41 +1,43 @@
 class ContaCorrente {
 
     String numero;
+    String agencia;
+    boolean especial;
+    double limiteEspecial;
     double saldo;
-    boolean statusEspecial;
-    double limite;
    
-    double sacar(double valor){
+    boolean sacar(double valorSaque){
         
-        if (valor > saldo){
-            System.out.println("Não é possível realizar o saque");
-            return 0;
-
-
+        if (saldo >=valorSaque){
+            saldo-=valorSaque;
+            return true;
         } else {
-            System.out.println("Saque realizado");
-            saldo -= valor;
-            return saldo;
-
+            if(especial){
+                double limite = limiteEspecial + saldo;
+                if(limite >=valorSaque){
+                    saldo -= valorSaque;
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
         }
     }
 
-    double depositar(double valor){
+    void depositar(double valorDepositado){
         
-        saldo += valor;
-        return saldo;
+        saldo += valorDepositado;
+
     }
     void verSaldo(){
         
         System.out.println("Seu valor atual de saldo é: "+ saldo);
     }
-    boolean verSaqueEspecial(){
+    boolean verificarChequeEspecial(){
         
-        if (statusEspecial = true){
-            return true;
-        } else {
-            return false;
-        }
+        return saldo < 0;
     }
 
 

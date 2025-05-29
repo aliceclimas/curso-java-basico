@@ -3,53 +3,41 @@ public class Ex03 {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-
+        
         Aluno aluno = new Aluno();
-
-        System.out.println("Digite o nome do aluno");
+        
+        System.out.println("Entre com o nome do aluno");
         aluno.nome = scan.next();
-
-        System.out.println("Digite a matrícula");
+        
+        System.out.println("Entre com o nome do curso");
+        aluno.nomeCurso = scan.next();
+        
+        System.out.println("Entre com a matricula");
         aluno.matricula = scan.next();
-
-        System.out.println("Digite o curso");
-        aluno.curso = scan.next();
-
-        System.out.println("Digite a disciplina1");
-        aluno.disciplina1 = scan.next();
-
-        System.out.println("Digite a disciplina2");
-        aluno.disciplina2 = scan.next();
-
-        System.out.println("Digite a disciplina3");
-        aluno.disciplina3 = scan.next();
-
-        System.out.println("Digite a nota1");
-        aluno.nota1 = scan.nextDouble();
-
-        System.out.println("Digite a nota2");
-        aluno.nota2 = scan.nextDouble();
-
-        System.out.println("Digite a nota3");
-        aluno.nota3 = scan.nextDouble();
-
-
-        double nota1 = aluno.nota1;
-        String disciplina1 = aluno.disciplina1;
-
-        double nota2 = aluno.nota2;
-        String disciplina2 = aluno.disciplina2;
-
-        double nota3 = aluno.nota3;
-        String disciplina3 = aluno.disciplina3;
-
-
-
-        aluno.calcularMedia(nota1, disciplina1);
-        aluno.calcularMedia(nota2, disciplina2);
-        aluno.calcularMedia(nota3, disciplina3);
-
-
+        
+       
+        for (int i=0; i<aluno.nomeDisciplinas.length; i++){
+            System.out.println("Entre com o nome da disciplina " + i);
+            aluno.nomeDisciplinas[i] = scan.next();
+        }
+        
+        for (int i=0; i<aluno.notasDisciplinas.length; i++){
+            System.out.println("Obtendo notas da disciplina " + aluno.nomeDisciplinas[i]);
+            for (int j=0; j<aluno.notasDisciplinas[i].length; j++){
+                System.out.println("Entre com a nota " + (j+1));
+                aluno.notasDisciplinas[i][j] = scan.nextDouble();
+            }
+        }
+        
+        aluno.mostrarInfo();
+        
+        for (int i=0; i<aluno.nomeDisciplinas.length; i++){
+            if (aluno.verificarAprovado(i)){
+                System.out.println("Disciplina " + aluno.nomeDisciplinas[i] + " - foi aprovado");
+            } else {
+                System.out.println("Disciplina " + aluno.nomeDisciplinas[i] + " - foi reprovado");
+            }
+        }
         scan.close();
     }
     

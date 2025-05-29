@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class ex17
+class ex17{
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
@@ -15,8 +15,8 @@ class ex17
 
 
 
-        System.out.println("Quantidade de tintas a serem compradas:"+ qtdTintas);
-        System.out.println("Valor toral"+precoTotal);
+        // System.out.println("Quantidade de tintas a serem compradas:"+ qtdTintas);
+        // System.out.println("Valor toral"+precoTotal);
 
 
     

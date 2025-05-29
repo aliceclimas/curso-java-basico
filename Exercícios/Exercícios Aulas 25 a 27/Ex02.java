@@ -3,15 +3,40 @@ public class Ex02 {
         
         ContaCorrente conta = new ContaCorrente();
         conta.numero = "123434";
+        conta.agencia = "1234";
+        conta.especial = true;
         conta.saldo = 50;
-        conta.statusEspecial = true;
-        conta.limite = 50;
+        conta.limiteEspecial = 500;
+        conta.saldo = -10;
 
-        conta.sacar(10);
-        conta.depositar(10);
+        System.out.println("Saldo da conta "+ conta.numero + " = " + conta.saldo);
+        boolean saqueEfetuado = conta.sacar(10);
+
+        if (saqueEfetuado){
+            System.out.println("Saque efetuado com sucesso");
+            conta.verSaldo();
+        } else {
+            System.out.println("Não é possível realizar saque. Saldo insuficiente");
+        }
+
+        saqueEfetuado = conta.sacar(500);
+        System.out.println("tentativa de saque de 500 reais");
+        if (saqueEfetuado){
+            System.out.println("Saque efetuado com sucesso");
+            conta.verSaldo();
+        } else {
+            System.out.println("Não foi possível realizar saque. Saldo insuficiente");
+        }
+
+        System.out.println("Depósito de 500 reais");
+        conta.depositar(500);
         conta.verSaldo();
-        conta.verSaqueEspecial();
-
+        
+        if(conta.verificarChequeEspecial()){
+            System.out.println("Está usando cheque especial");
+        } else {
+            System.out.println("Não está usando cheque especial");
+        }
         
 
         
